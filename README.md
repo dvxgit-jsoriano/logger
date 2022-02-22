@@ -6,5 +6,11 @@ This is a Flexible Optimized Logger which you can configure the path, centralize
 
 - To install the package:
 
-`composer require dvxgit-jsoriano/flex-optimal-logger`
+`composer require dvxgit-jsoriano/logger`
 
+- To use the package:
+
+```
+$logger = new Logger('/var/log/your-app/');
+$logger->log("This is a test log!", ["key"=>"value"]);
+```
