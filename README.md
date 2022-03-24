@@ -11,8 +11,15 @@ This is a Flexible Optimized Logger which you can configure the path, centralize
 - To use the package:
 
 ```
-$logger = new Logger('/var/log/your-app/');
-$logger->log("This is a test log!", ["key"=>"value"]);
+// GET CONFIG FROM jsoriano-logger configuration
+Logger::configure();
+// SET YOUR OWN CONFIG PATH
+Logger::configure('/var/log/your-app/');
+// SET YOUR OWN CONFIG PATH, NAME, EXT
+Logger::configure('/var/log/your-app/', '_app', '.txt');
+
+// CALL LOG AFTER CONFIGURE, PASS PAYLOAD
+Logger::log("Testing 123!", ["key"=>"value"]);
 ```
 
 ## Troubleshoot
