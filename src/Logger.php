@@ -4,7 +4,6 @@ namespace DvxgitJsoriano\Logger;
 
 class Logger
 {
-
     public static $path;
     public static $name;
     public static $ext;
@@ -16,7 +15,7 @@ class Logger
         $this->ext = $ext ?? '.log';
     }
 
-    public static function configure($path = '/var/log/', $name ='_log', $ext = '.log') {
+    public static function configure($path = null, $name = null, $ext = null) {
         self::$path = $path ?? config('jsoriano-logger.path');
         self::$name = $name ?? config('jsoriano-logger.name');
         self::$ext = $ext ?? config('jsoriano-logger.ext');
@@ -43,7 +42,7 @@ class Logger
     public static function log($message = null, $payload = []) {
         $log_path = self::$path . date('Ym') . "/";
         $log_file = $log_path . date('Ymd') . self::$name . self::$ext;
-        dd($log_file);
+        //dd($log_file);
 
         if (file_exists($log_file)) {
             file_put_contents($log_file, date('YmdHis') . ": " . $message . ", " . json_encode($payload) . PHP_EOL, FILE_APPEND);
