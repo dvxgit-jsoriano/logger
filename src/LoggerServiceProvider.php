@@ -11,7 +11,7 @@ class LoggerServiceProvider extends ServiceProvider {
 
         $this->publishes([
             __DIR__.'/config/jsoriano-logger.php' => config_path('jsoriano-logger.php'),
-        ], 'config');
+        ], 'logger-config');
     }
 
     public function register() {

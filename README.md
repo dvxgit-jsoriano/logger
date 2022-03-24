@@ -8,9 +8,13 @@ This is a Flexible Optimized Logger which you can configure the path, centralize
 
 `composer require dvxgit-jsoriano/logger`
 
+- To publish the package:
+
+`php artisan vendor:publish --tag=logger-config`
+
 - To use the package:
 
-```
+```php
 // GET CONFIG FROM jsoriano-logger configuration
 Logger::configure();
 // SET YOUR OWN CONFIG PATH
