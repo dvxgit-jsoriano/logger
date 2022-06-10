@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'path' => '/var/log/',
+    'path' => '/var/log/app/',
     'name' => '_log',
     'ext' => '.log',
 ];
